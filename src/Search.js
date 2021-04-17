@@ -9,8 +9,8 @@ import PeopleIcon from "@material-ui/icons/People";
 
 //Date picker
 function Search() {
-  const [startDate, setStartDate] = useState(newDate());
-  const [endDate, setEndDate] = useSTate(new Date());
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date());
 
   const selectionRange = {
     startDate: startDate,
@@ -26,6 +26,12 @@ function Search() {
   return (
     <div className="search">
       <DateRangePicker ranges={[selectionRange]} onChange={handleSelect} />
+      <h2>
+        Number of Guests
+        <PeopleIcon />
+      </h2>
+      <input min={0} defaultValue={2} type="number" />
+      <Button>Search AirBnb</Button>
     </div>
   );
 }
